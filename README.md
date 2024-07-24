@@ -8,13 +8,20 @@ Send a message per websocket whenever a file is modified. Implemented using [Bun
 bun install
 ```
 
-2. Run:
+2. Create a `.env` file in the root directory with:
+
+```dotenv
+PUBLIC_DIR=/public
+WATCH_FILE=test.txt
+```
+
+3. Run:
 
 ```bash
 bun run index.ts
 ```
 
-3. Connect to the websocket in the browser:
+4. Connect to the websocket in the browser:
 
 ```javascript
 new WebSocket('ws://localhost:3000/socket').addEventListener('message', event => {
@@ -22,4 +29,4 @@ new WebSocket('ws://localhost:3000/socket').addEventListener('message', event =>
 });
 ```
 
-4. Edit `/public/test.txt`.
+5. Edit `/public/test.txt`.
